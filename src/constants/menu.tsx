@@ -1,5 +1,5 @@
 import { Route } from '@ant-design/pro-layout/lib/typings';
-import { DashboardOutlined } from '@ant-design/icons';
+import { AppstoreOutlined, DashboardOutlined } from '@ant-design/icons';
 import React from 'react';
 
 export const PERMISSIONS = {
@@ -17,20 +17,95 @@ export const menu: Route = {
   routes: [
     {
       icon: <DashboardOutlined />,
-      name: '模版页面',
-      somePermissions: [PERMISSIONS.TEMPLATE_ONE, PERMISSIONS.TEMPLATE_TWO],
+      name: '较常用型',
       routes: [
         {
-          name: '模版子页面1',
+          name: 'Form',
           exact: true,
-          path: '/template/one',
-          somePermissions: [PERMISSIONS.TEMPLATE_ONE],
+          path: '/frequently/form',
         },
         {
-          name: '模版子页面2',
+          name: 'Search',
           exact: true,
-          path: '/template/two',
-          somePermissions: [PERMISSIONS.TEMPLATE_TWO],
+          path: '/frequently/search',
+        },
+        {
+          name: 'SearchTable',
+          exact: true,
+          path: '/frequently/searchTable',
+        },
+        {
+          name: 'ContentWrapper',
+          exact: true,
+          path: '/frequently/contentWrapper',
+        },
+      ],
+    },
+    {
+      icon: <AppstoreOutlined />,
+      name: '自适应型',
+      routes: [
+        {
+          name: 'AutoSizeList',
+          exact: true,
+          path: '/auto/autoSizeList',
+        },
+        {
+          name: 'ContainImage',
+          exact: true,
+          path: '/auto/containImage',
+        },
+        {
+          name: 'ContainVideo',
+          exact: true,
+          path: '/auto/containVideo',
+        },
+        {
+          name: 'ContainAttach',
+          exact: true,
+          path: '/auto/containAttach',
+        },
+        {
+          name: 'FileSwiper',
+          exact: true,
+          path: '/auto/fileSwiper',
+        },
+      ],
+    },
+    {
+      icon: <DashboardOutlined />,
+      name: '图片型',
+      routes: [
+        {
+          name: 'ContainImage',
+          exact: true,
+          path: '/img/containImage',
+        },
+        {
+          name: 'CropPicModal',
+          exact: true,
+          path: '/img/cropPicModal',
+        },
+        {
+          name: 'PictrueJigsaw',
+          exact: true,
+          path: '/img/pictrueJigsaw',
+        },
+      ],
+    },
+    {
+      icon: <DashboardOutlined />,
+      name: '其他',
+      routes: [
+        {
+          name: 'Form',
+          exact: true,
+          path: '/other/textCopy',
+        },
+        {
+          name: 'Permission',
+          exact: true,
+          path: '/other/permission',
         },
       ],
     },

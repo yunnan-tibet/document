@@ -14,6 +14,7 @@
       "@/*": ["src/*"],
       "@@/*": ["src/.umi/*"]
     },
+    "typeRoots": ["node_modules/@types", "node_modules/@szsk", "global.d.ts"],
     "allowSyntheticDefaultImports": true
   },
   "include": [

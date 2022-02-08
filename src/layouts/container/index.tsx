@@ -4,7 +4,7 @@ import { IUserState, useLocation, useSelector, useDispatch } from 'umi';
 import BasicLayout, { MenuDataItem } from '@ant-design/pro-layout';
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import { Route } from '@ant-design/pro-layout/lib/typings';
-import logo from '@assets/img/logo.jpg';
+import logo from '@/assets/img/logo.jpg';
 import styles from './index.less';
 import { menu, PERMISSIONS } from '@/constants';
 import { IAppState } from '@/models';
@@ -124,7 +124,7 @@ export default function Container({ children }: IProps) {
   return (
     <ConfigProvider>
       <BasicLayout
-        logo={getLogo()}
+        // logo={getLogo()}
         location={{
           pathname,
         }}
@@ -135,7 +135,7 @@ export default function Container({ children }: IProps) {
         menuItemRender={menuItemRender}
         rightContentRender={getRightContentRender}
         breadcrumbRender={(route) => route}
-        title=""
+        title="使用介绍"
         className={styles.layout}
         navTheme="light"
         route={getMenu()}

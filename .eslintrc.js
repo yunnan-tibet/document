@@ -30,10 +30,11 @@ module.exports = {
     // 3.对于不符合prettier规范的写法，eslint会提示报错
     'prettier/prettier': 'error',
     'react/display-name': 0,
-    'no-console': 2,
+    'no-console': 1,
     // 导入js
     'import/extensions': 0,
     'import/no-unresolved': 0,
+    'react/jsx-curly-brace-presence': 0,
     // jsx允许在tsx里面
     'react/jsx-filename-extension': 0,
     // react

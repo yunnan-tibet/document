@@ -5,7 +5,8 @@
   "scripts": {
     "start": "cross-env UMI_ENV=dev umi dev",
     "build": "cross-env UMI_ENV=prod umi build",
-    "gPage": "umi g page /pageName/index --typescript"
+    "gPage": "umi g page /pageName/index --typescript",
+    "gT": "node script/getTemplate.js"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
@@ -29,14 +30,20 @@
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@ant-design/pro-layout": "^6.5.0",
+    "@szsk/rac": "^1.0.11",
+    "common-tags": "^1.8.2",
+    "highlight.js": "^10.7.3",
     "react": "17.x",
     "react-dom": "17.x",
+    "react-highlight": "^0.14.0",
     "umi": "^3.5.17"
   },
   "devDependencies": {
     "@types/antd": "^1.0.0",
+    "@types/common-tags": "^1.8.1",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@types/react-highlight": "^0.12.5",
     "@typescript-eslint/eslint-plugin": "^4.28.5",
     "@typescript-eslint/parser": "^4.28.5",
     "@umijs/preset-react": "1.x",
