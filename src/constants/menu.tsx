@@ -48,39 +48,34 @@ export const menu: Route = {
         {
           name: 'AutoSizeList',
           exact: true,
-          path: '/auto/autoSizeList',
+          path: '/adaptive/autoSizeList',
         },
         {
           name: 'ContainImage',
           exact: true,
-          path: '/auto/containImage',
+          path: '/adaptive/containImage',
         },
         {
           name: 'ContainVideo',
           exact: true,
-          path: '/auto/containVideo',
+          path: '/adaptive/containVideo',
         },
-        {
-          name: 'ContainAttach',
-          exact: true,
-          path: '/auto/containAttach',
-        },
-        {
-          name: 'FileSwiper',
-          exact: true,
-          path: '/auto/fileSwiper',
-        },
+        // {
+        //   name: 'ContainAttach',
+        //   exact: true,
+        //   path: '/adaptive/containAttach',
+        // },
+        // {
+        //   name: 'FileSwiper',
+        //   exact: true,
+        //   path: '/adaptive/fileSwiper',
+        // },
       ],
     },
     {
       icon: <DashboardOutlined />,
       name: '图片型',
       routes: [
-        {
-          name: 'ContainImage',
-          exact: true,
-          path: '/img/containImage',
-        },
         {
           name: 'CropPicModal',
           exact: true,
@@ -98,15 +93,15 @@ export const menu: Route = {
       name: '其他',
       routes: [
         {
-          name: 'Form',
+          name: 'TextCopy',
           exact: true,
           path: '/other/textCopy',
         },
-        {
-          name: 'Permission',
-          exact: true,
-          path: '/other/permission',
-        },
+        // {
+        //   name: 'Permission',
+        //   exact: true,
+        //   path: '/other/permission',
+        // },
       ],
     },
   ],
