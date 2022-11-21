@@ -147,11 +147,11 @@ const request = {
     return awaitTo(download);
   },
   /**
-  * 根据内容文件流导出，xhr，有文件名，没有做catch处理
-  * @param url
-  * @param param
-  * @param fileName
-  */
+   * 根据内容文件流导出，xhr，有文件名，没有做catch处理
+   * @param url
+   * @param param
+   * @param fileName
+   */
   download1: (url: string, params: any, fileName?: string) => {
     return new Promise((resolve, reject) => {
       const xmlResquest = new XMLHttpRequest();
@@ -170,7 +170,9 @@ const request = {
             xmlResquest.getResponseHeader('Content-disposition') || '';
           // 返回头文件名和格式
           const name = 'filename=';
-          const info = disposition.slice(disposition.indexOf(name) + name.length);
+          const info = disposition.slice(
+            disposition.indexOf(name) + name.length,
+          );
           // 将code码转成中文，设置下载文件名
           elink.download = `${fileName || ''}${decodeURI(info)}`;
           elink.style.display = 'none';
@@ -222,7 +224,7 @@ const request = {
         xhr.send(_data);
       }),
     );
-  }
+  },
 };
 
 export default request;

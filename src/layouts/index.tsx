@@ -21,7 +21,7 @@ export default function Layouts({ children }: IProps) {
   }, [pathname, userId]);
   return (
     <ConfigProvider>
-      {userId ? <Container>{children}</Container> : <Login />}
+      <Container>{children}</Container>
     </ConfigProvider>
   );
 }
