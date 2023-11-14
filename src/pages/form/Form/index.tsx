@@ -12,7 +12,7 @@ const FormTest = () => {
   const formConfig: IAttribute[] = [
     {
       key: 'formItems',
-      type: 'IFormItems[]',
+      type: 'IFormItem[]',
       desc: 'item配置',
     },
     {
@@ -40,7 +40,7 @@ const FormTest = () => {
     },
     {
       key: 'render',
-      type: 'React.ReactNode',
+      type: '(item: T) => React.ReactNode',
       desc: '自定义表单组件',
     },
     {
@@ -56,7 +56,7 @@ const FormTest = () => {
     {
       key: 'options',
       type: 'ISelectOption[]',
-      desc: 'select|checkbox|radio类型的可选项',
+      desc: 'select|checkbox|radio类型的可选项',
     },
     {
       key: 'props',

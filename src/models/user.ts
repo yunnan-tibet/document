@@ -55,7 +55,7 @@ const UserModal: IUserModal = {
   },
   subscriptions: {
     setup({ dispatch }: any) {
-      // 页面加载获取用户信息等，只会执行一次
+      // 页面加载获取用户信息等，只会执行
       dispatch({
         type: 'getUserInfo',
       });

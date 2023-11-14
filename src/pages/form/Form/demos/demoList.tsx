@@ -6,7 +6,7 @@ const DemoList = () => {
   const config = [
     {
       key: '1',
-      desc: '基本使用方式，支持3，4，5列，支持基本选项配置以及自定义form item内容，但是要注意响应式页面是否符合要求',
+      desc: '基本使用方式，支持1-5列，支持基本选项配置以及自定义form item内容，但是要注意响应式页面是否符合要求',
       template: `import React, { useRef, useState } from 'react';
 import { SForm } from '@szsk/rac';
 import { Button } from 'antd';

@@ -3,8 +3,9 @@ import { SForm, SSearch, AutoSizeList } from '@szsk/rac';
 import { Button } from 'antd';
 import { IFormItem } from '@szsk/rac/lib/Form/type';
 
-const Demo = () => {
+const Demo1 = () => {
   const itemWidth = 200;
+  const rowNum = 2;
   const list = [
     {
       name: 'content',
@@ -62,8 +63,9 @@ const Demo = () => {
       space={10}
       CompCard={CompCard}
       itemWidth={itemWidth}
+      rowNum={rowNum}
     />
   );
 };
 
-export default Demo;
+export default Demo1;

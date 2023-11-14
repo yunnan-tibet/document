@@ -1,7 +1,7 @@
 import { defineConfig } from 'umi';
 
 export default defineConfig({
-  title: '项目名称',
+  title: '后台组件库',
   dva: {
     hmr: true,
     immer: true,
@@ -9,5 +9,7 @@ export default defineConfig({
   history: {
     type: 'hash',
   },
-  publicPath: '/',
+  // mfsu: {},
+  publicPath: './',
+  outputPath: 'adminDoc',
 });

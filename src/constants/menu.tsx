@@ -17,28 +17,23 @@ export const menu: Route = {
   routes: [
     {
       icon: <DashboardOutlined />,
-      name: '较常用型',
+      name: '表单',
       routes: [
         {
           name: 'Form',
           exact: true,
-          path: '/frequently/form',
+          path: '/form/form',
         },
         {
           name: 'Search',
           exact: true,
-          path: '/frequently/search',
+          path: '/form/search',
         },
-        {
-          name: 'SearchTable',
-          exact: true,
-          path: '/frequently/searchTable',
-        },
-        {
-          name: 'ContentWrapper',
-          exact: true,
-          path: '/frequently/contentWrapper',
-        },
+        // {
+        //   name: 'SearchTable',
+        //   exact: true,
+        //   path: '/frequently/searchTable',
+        // },
       ],
     },
     {
@@ -50,6 +45,21 @@ export const menu: Route = {
           exact: true,
           path: '/adaptive/autoSizeList',
         },
+        {
+          name: 'StickyTabs',
+          exact: true,
+          path: '/adaptive/stickyTabs',
+        },
+        {
+          name: 'AutoFillTable',
+          exact: true,
+          path: '/adaptive/autoFillTable',
+        },
+        // {
+        //   name: 'FlexibleTable',
+        //   exact: true,
+        //   path: '/adaptive/flexibleTable',
+        // },
         {
           name: 'ContainImage',
           exact: true,
@@ -90,18 +100,29 @@ export const menu: Route = {
     },
     {
       icon: <DashboardOutlined />,
-      name: '其他',
+      name: '工具',
       routes: [
         {
-          name: 'TextCopy',
+          name: 'TableHeaderConfig',
           exact: true,
-          path: '/other/textCopy',
+          path: '/tools/tableHeaderConfig',
         },
-        // {
-        //   name: 'Permission',
-        //   exact: true,
-        //   path: '/other/permission',
-        // },
+        {
+          name: 'Cron',
+          exact: true,
+          path: '/tools/cron',
+        },
+      ],
+    },
+    {
+      icon: <DashboardOutlined />,
+      name: 'UI',
+      routes: [
+        {
+          name: 'ContentWrapper',
+          exact: true,
+          path: '/ui/contentWrapper',
+        },
       ],
     },
   ],

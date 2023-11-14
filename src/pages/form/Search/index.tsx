@@ -12,7 +12,7 @@ const SearchTest = () => {
   const searchConfig: IAttribute[] = [
     {
       key: 'formItems',
-      type: 'IFormItems[]',
+      type: 'IFormItem[]',
       desc: 'item配置',
     },
     {
@@ -30,7 +30,7 @@ const SearchTest = () => {
   return (
     <ContentWrapper title="SSearch">
       <DocSection>
-        用于列表搜索，目前重置和查询按钮位置存在大缺陷，需要做一个收起展开的能力
+        用于列表搜索，目前重置和查询按钮位置存在大缺陷，需要做一个收起展开的能力
       </DocSection>
       <DocSection title="代码展示">
         <DemoList />
