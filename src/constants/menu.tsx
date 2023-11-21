@@ -125,5 +125,16 @@ export const menu: Route = {
         },
       ],
     },
+    {
+      icon: <DashboardOutlined />,
+      name: '业务',
+      routes: [
+        {
+          name: 'TrendAnalysis',
+          exact: true,
+          path: '/biz/trendAnalysis',
+        },
+      ],
+    },
   ],
 };

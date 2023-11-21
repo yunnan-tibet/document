@@ -1,12 +1,12 @@
 /**
  * request 网络请求工具
- * 经过一层返回的封装，使用方式为：
+ * 经过一层返回的封装，使用方式为：
  * const [err, data] = await XxxService.getXXX();
  * // 如果没有错误，err为null
  * if (!err) {
  *  // 后续处理
  * }
- * 更详细的 api 文档: https://github.com/umijs/umi-request
+ * 更详细的 api 文档: https://github.com/umijs/umi-request
  */
 import { extend, ResponseError, RequestOptionsWithResponse } from 'umi-request';
 import { getDvaApp } from 'umi';

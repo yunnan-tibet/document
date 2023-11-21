@@ -1,0 +1,37 @@
+.tabItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 150px;
+  height: 40px;
+  padding: 8px 0 8px 8px;
+
+  &:hover {
+    .operateWrapper .operate {
+      display: block;
+    }
+  }
+  .name {
+    flex: 1;
+    margin-right: 16px;
+  }
+
+  .operateWrapper {
+    width: 50px;
+    .operate {
+      display: none;
+      .editBtn {
+        color: #1890ff;
+      }
+
+      .closeBtn {
+        color: red;
+      }
+
+      .okBtn {
+        color: #1890ff;
+
+      }
+    }
+  }
+}
