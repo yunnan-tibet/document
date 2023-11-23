@@ -109,9 +109,19 @@ const PositionTable = (props: IProps) => {
       posL.map((item) => {
         if (item.id === id) {
           const otherParam: IPosItem = {};
-          if (key === 'areaSetType' && v === AREA_SET_TYPE.AUTO) {
-            otherParam.upperLimit = item.upperLimitOrigin;
-            otherParam.lowerLimit = item.lowerLimitOrigin;
+          if (key === 'areaSetType') {
+            if (v === AREA_SET_TYPE.AUTO) {
+              otherParam.upperLimit = item.upperLimitOrigin;
+              otherParam.lowerLimit = item.lowerLimitOrigin;
+            }
+          } else if (key === 'isMain') {
+            if (v) {
+              otherParam.isY = v;
+            }
+          } else if (key === 'isY') {
+            if (!v) {
+              otherParam.isMain = v;
+            }
           }
           return { ...item, [key]: v, ...otherParam };
         }
@@ -128,7 +138,9 @@ const PositionTable = (props: IProps) => {
         <Checkbox
           value={v}
           disabled={hasMain && !v}
-          onChange={(_v: any) => onDataChange('isMain', _v, record)}
+          onChange={(e: any) =>
+            onDataChange('isMain', e.target.checked, record)
+          }
         />
       ),
     },

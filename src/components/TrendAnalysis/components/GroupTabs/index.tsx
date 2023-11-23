@@ -6,6 +6,7 @@ import { ITrendAnaGroup } from '../../types';
 import MyTab from './MyTab';
 import styles from './index.less';
 import GroupEditModal from '../GroupEditModal';
+import { GROUP_LIST_MOCK } from '../../mock';
 
 const { TabPane } = Tabs;
 
@@ -30,20 +31,7 @@ const GroupTabs = (props: IProps) => {
   }, [activeKey, groupL]);
 
   const getAnaGroupL = () => {
-    setGroupL([
-      {
-        id: '1',
-        name: '分组1',
-        type: 'analysis',
-        desc: '',
-      },
-      {
-        id: '2',
-        name: '分组2',
-        type: 'analysis',
-        desc: '',
-      },
-    ]);
+    setGroupL(GROUP_LIST_MOCK);
     console.log('获取分组列表');
   };
 

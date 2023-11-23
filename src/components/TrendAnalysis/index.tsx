@@ -2,9 +2,11 @@ import { PlusSquareOutlined } from '@ant-design/icons';
 import React, { useEffect, useRef, useState } from 'react';
 import GroupEditModal from './components/GroupEditModal';
 import GroupTabs from './components/GroupTabs';
+import PosCharts from './components/PosCharts';
 import PositionTable from './components/PositionTable';
 
 import styles from './index.less';
+import { POS_CONFIG_MOCK, POS_DATA_MOCK } from './mock';
 import { IPosItem, ITrendAnaGroup } from './types';
 import { generateColorByIndex } from './utils';
 
@@ -33,18 +35,7 @@ const TrendAnalysis = () => {
   // 获取分组测点配置todo
   const getPosConfig = () => {
     setPosL(
-      [
-        {
-          id: '1',
-          posId: '11',
-          areaSetType: '1',
-          upperLimit: 10,
-          lowerLimit: 0,
-          fillRule: '1',
-          isMain: false,
-          isY: false,
-        },
-      ].map((item, idx) => ({
+      POS_CONFIG_MOCK.map((item, idx) => ({
         ...item,
         color: generateColorByIndex(idx),
         upperLimitOrigin: item.upperLimit,
@@ -63,25 +54,7 @@ const TrendAnalysis = () => {
     };
     console.log(params);
 
-    const data: IPosItem[] = [
-      {
-        posId: '11',
-        currentValue: 3.22,
-        meanValue: 4.23,
-        maxValue: 7.43,
-        minValue: 1.93,
-        list: [
-          {
-            time: '2023-11-02 17:00:00',
-            value: 3.23,
-          },
-          {
-            time: '2023-11-02 17:30:00',
-            value: 4.24,
-          },
-        ],
-      },
-    ];
+    const data: IPosItem[] = POS_DATA_MOCK;
     setPosL(
       posL.map((item) => {
         const sameItem = data.find((dItem) => dItem.posId === item.posId);
@@ -109,6 +82,7 @@ const TrendAnalysis = () => {
         times={times}
         setTimes={setTimes}
       />
+      <PosCharts posL={posL} />
     </div>
   );
 };

@@ -7,7 +7,6 @@ export interface ITrendAnaGroup {
 
 export interface IPosItem {
   id?: string;
-  key?: string;
   posId?: string; // 测点id
   name?: string;
   color?: string; // 颜色
