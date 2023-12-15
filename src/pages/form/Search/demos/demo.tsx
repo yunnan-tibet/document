@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { SForm, SSearch } from '@szsk/rac';
-import { Button } from 'antd';
+import { Button, InputNumber } from 'antd';
 import { IFormItem } from '@szsk/rac/lib/Form/type';
 
 const Demo = () => {
@@ -69,21 +69,14 @@ const Demo = () => {
   ];
 
   const onSubmit = (params: any, toFirst, isReset) => {
-    console.log(params);
+    // console.log(params);
   };
 
   return (
     <>
       <div className="f-mb-m">
-        <Button className="f-mr-m" type="primary" onClick={() => setCol(3)}>
-          3列
-        </Button>
-        <Button className="f-mr-m" type="primary" onClick={() => setCol(4)}>
-          4列
-        </Button>
-        <Button className="f-mr-m" type="primary" onClick={() => setCol(5)}>
-          5列
-        </Button>
+        列数：
+        <InputNumber value={columns} onChange={(v) => setCol(v)} min={1} />
       </div>
       <SSearch
         ref={formEle}

@@ -29,6 +29,11 @@ export const menu: Route = {
           exact: true,
           path: '/form/search',
         },
+        {
+          name: 'TableHeaderConfig',
+          exact: true,
+          path: '/form/tableHeaderConfig',
+        },
         // {
         //   name: 'SearchTable',
         //   exact: true,
@@ -55,11 +60,11 @@ export const menu: Route = {
           exact: true,
           path: '/adaptive/autoFillTable',
         },
-        // {
-        //   name: 'FlexibleTable',
-        //   exact: true,
-        //   path: '/adaptive/flexibleTable',
-        // },
+        {
+          name: 'FlexibleTable',
+          exact: true,
+          path: '/adaptive/flexibleTable',
+        },
         {
           name: 'ContainImage',
           exact: true,
@@ -102,11 +107,6 @@ export const menu: Route = {
       icon: <DashboardOutlined />,
       name: '工具',
       routes: [
-        {
-          name: 'TableHeaderConfig',
-          exact: true,
-          path: '/tools/tableHeaderConfig',
-        },
         {
           name: 'Cron',
           exact: true,

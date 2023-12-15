@@ -6,9 +6,8 @@ import { TableProps } from 'antd/lib/table';
 import { FlexibleTableProps, FlexibleColumnProps } from './types';
 import Pagi from '../Pagination';
 
-const TABLE_CELL_PADDING_WIDTH = 2 * 16;
-const DEFAULT_TABLE_CELL_SCROLL_WIDTH = 200;
-const CHAR_LENGTH_TO_CH = 1.8;
+const TABLE_CELL_PADDING_WIDTH = 2 * 16; // 默认padding是16
+const CHAR_LENGTH_TO_CH = 1.8; // 1.8ch为一个中文
 export const remarkStyle = {
   display: '-webkit-box',
   WebkitLineClamp: 2,
@@ -36,7 +35,7 @@ const FlexibleTable: React.FC<FlexibleTableProp> = (props) => {
     let scrollCh = 0;
     let scrollPx = 0;
     const newColumns = columns.map((col) => {
-      // 默认字符
+      // 添加默认字符
       if (defaultEmptyChar) {
         const _render = col.render;
 
@@ -48,11 +47,9 @@ const FlexibleTable: React.FC<FlexibleTableProp> = (props) => {
         };
       }
 
+      // 设置col单元宽度
       if (col.width) {
-        scrollPx +=
-          typeof col.width === 'number'
-            ? col.width
-            : DEFAULT_TABLE_CELL_SCROLL_WIDTH;
+        scrollPx += +col.width;
         if (col.tooltip) {
           if (!col.render) {
             col.render = (text: string, record: any, idx: number) => (
@@ -74,9 +71,11 @@ const FlexibleTable: React.FC<FlexibleTableProp> = (props) => {
         }
         return col;
       }
+      // 没设置宽度的需要计算最大宽度，得到单位是ch
       let chWidth = computeCellWidthInCh(dataSource, col);
 
       chWidth += 1;
+      // padding的宽度
       const extraPxWidth = TABLE_CELL_PADDING_WIDTH;
 
       const newCol = {
@@ -146,28 +145,33 @@ function computeCellWidthInCh(
   const { title, dataIndex, render } = columnProps;
   const initialWidth =
     typeof title === 'string' ? title.length * CHAR_LENGTH_TO_CH : 0;
-
   if (!dataIndex || !Array.isArray(dataSource)) {
     return initialWidth;
   }
   const maxWidth = dataSource?.reduce((currentMaxWidth, dataItem, idx) => {
+    // 先拿到dataIndex值
     let currentCellValue = result(dataItem, dataIndex);
     if (render) {
+      // 拿到render值
       const renderResult = render(currentCellValue, dataItem, idx);
       if (typeof renderResult === 'string') {
         currentCellValue = renderResult;
       }
     }
+    // 值是空的则最大的就用之前最大的
     if (currentCellValue === undefined || currentCellValue === null) {
       return currentMaxWidth;
     }
     let length = 0;
     const restCellValue = currentCellValue
       .toString()
+      // 获取中文的个数
+      // eslint-disable-next-line no-control-regex
       .replace(/[^\u0000-\u00ff]/g, function (substring) {
         length += substring.length;
         return '';
       });
+
     let width = length * CHAR_LENGTH_TO_CH + restCellValue.length;
     width = Math.max(width, currentMaxWidth);
     return width;

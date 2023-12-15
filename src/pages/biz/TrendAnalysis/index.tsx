@@ -31,7 +31,7 @@ const TrendAnalysisTest = () => {
       </DocSection>
       <DocSection title="API">
         <div>TrendAnalysis</div>
-        <Table columns={ATTRIBUTE_COLUMNS} dataSource={formConfig} />
+        {/* <Table columns={ATTRIBUTE_COLUMNS} dataSource={formConfig} /> */}
       </DocSection>
     </ContentWrapper>
   );

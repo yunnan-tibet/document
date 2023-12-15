@@ -6,10 +6,10 @@ const DemoList = () => {
   const config = [
     {
       key: '1',
-      desc: '基本使用方式，支持3，4，5列，支持基本选项配置以及自定义form item内容，但是要注意响应式页面是否符合要求',
+      desc: '基本使用方式，支持1-4列，支持基本选项配置以及自定义form item内容',
       template: `import React, { useRef, useState } from 'react';
 import { SForm, SSearch } from '@szsk/rac';
-import { Button } from 'antd';
+import { Button, InputNumber } from 'antd';
 import { IFormItem } from '@szsk/rac/lib/Form/type';
 
 const Demo = () => {
@@ -84,15 +84,8 @@ const Demo = () => {
   return (
     <>
       <div className="f-mb-m">
-        <Button className="f-mr-m" type="primary" onClick={() => setCol(3)}>
-          3列
-        </Button>
-        <Button className="f-mr-m" type="primary" onClick={() => setCol(4)}>
-          4列
-        </Button>
-        <Button className="f-mr-m" type="primary" onClick={() => setCol(5)}>
-          5列
-        </Button>
+        列数：
+        <InputNumber value={columns} onChange={(v) => setCol(v)} min={1} />
       </div>
       <SSearch
         ref={formEle}

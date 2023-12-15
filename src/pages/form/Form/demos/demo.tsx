@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { SForm } from '@szsk/rac';
-import { Button } from 'antd';
+import { Button, InputNumber } from 'antd';
 import { IFormItem } from '@szsk/rac/lib/Form/type';
 
 const Demo = () => {
@@ -71,22 +71,15 @@ const Demo = () => {
 
   const onSubmit = () => {
     formEle.current.validateFields().then((values: any) => {
-      console.log(values);
+      // console.log(values);
     });
   };
 
   return (
     <>
       <div className="f-mb-m">
-        <Button className="f-mr-m" type="primary" onClick={() => setCol(3)}>
-          3列
-        </Button>
-        <Button className="f-mr-m" type="primary" onClick={() => setCol(4)}>
-          4列
-        </Button>
-        <Button className="f-mr-m" type="primary" onClick={() => setCol(5)}>
-          5列
-        </Button>
+        列数：
+        <InputNumber value={columns} onChange={(v) => setCol(v)} min={1} />
       </div>
       <SForm ref={formEle} formItems={formItems} columns={columns} />
       <Button type="primary" onClick={onSubmit}>
